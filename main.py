@@ -7,6 +7,7 @@ palabras = db.readlines()
 palabra = random.choice(palabras)
 
 palabra = palabra.replace("\n", "")
+palabra = palabra.replace("Ã±", "ñ")
 
 print(palabra)
 
