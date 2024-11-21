@@ -22,26 +22,27 @@ palabra = palabra.replace("Ã±", "ñ")
 
 palabra_usuario = ""
 
-def introducir_palabra(palabra_usuario):
-  palabra_usuario = input("Introduce una palabra de cinco letras: ")
-  return palabra_usuario
-
-introducir_palabra(palabra_usuario)
-
-if len(palabra_usuario) < 5:
-  print("La palabra debe contener 5 letras")
-  introducir_palabra(palabra_usuario)
-
 palabras_nuevo = []
 
 for i in palabras:
   palabras_nuevo.append(i.replace("\n", ""))
   palabras_nuevo.append(i.replace("Ã±", "ñ"))
 
-if palabra_usuario not in palabras_nuevo:
-  print("La palabra introducida no se encuentra en la base de datos")
-    
-  introducir_palabra(palabra_usuario)
+
+def introducir_palabra(palabra_usuario):
+  palabra_usuario = input("Introduce una palabra de cinco letras: ")
+  if len(palabra_usuario) < 5:
+    print("La palabra debe contener 5 letras")
+    introducir_palabra(palabra_usuario)
+  else:
+    if palabra_usuario not in palabras_nuevo:
+      print("La palabra introducida no se encuentra en la base de datos")
+      introducir_palabra(palabra_usuario)
+    else:
+      return palabra_usuario
+
+
+introducir_palabra(palabra_usuario)
 
 # Lista de caracteres tanto como de palabra elegida al azar como de la palabra intdocida por el usuario
 
