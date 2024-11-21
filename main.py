@@ -39,7 +39,7 @@ for i in palabras:
   palabras_nuevo.append(i.replace("Ã±", "ñ"))
 
 if palabra_usuario not in palabras_nuevo:
-  print("La palabra introducida no se encuentra en la        base de datos")
+  print("La palabra introducida no se encuentra en la base de datos")
     
   introducir_palabra(palabra_usuario)
 
