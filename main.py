@@ -1,5 +1,5 @@
 ## Adivina la palabra
-## Un proyecto hecho por Alejandro Buzón García y Álvaro Manuel Guerreo Ramos
+## Un proyecto hecho por Alejandro Buzón García y Álvaro Manuel Guerrero Ramos
 
 # Librerias
 
@@ -44,7 +44,7 @@ def introducir_palabra(palabra_usuario):
 
 introducir_palabra(palabra_usuario)
 
-# Lista de caracteres tanto como de palabra elegida al azar como de la palabra intdocida por el usuario
+# Lista de caracteres tanto como de palabra elegida al azar como de la palabra introducida por el usuario
 
 palabra_lista = list(palabra)
 palabra_usuario_lista = list(palabra_usuario)
@@ -53,8 +53,11 @@ palabra_usuario_lista = list(palabra_usuario)
 
 # Comprobar si los carácteres de la palabra introducida por el usuario son correctos
 
-for i in palabra_usuario:
-  if i in palabra:
-    print(f"{i} está en la palabra")
-  if i not in palabra_lista:
-    print(f"{i} no está en la lista")
+def comprobar_caracteres(palabra_usuario_lista, palabra_lista):
+  for i in palabra_usuario_lista:
+    if i in palabra_lista:
+      print(f"{i} está en la palabra")
+    else:
+      print(f"{i} no está en la palabra")
+
+comprobar_caracteres(palabra_usuario_lista, palabra_lista)
