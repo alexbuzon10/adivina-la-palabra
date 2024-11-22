@@ -11,10 +11,7 @@ class colors:
   RESET = "\n\x1b[0m"
   RED = "\n\x1b[31m"
   GREEN = "\n\x1b[32m"
-   = "\n\x1b[33m"
   
-  
- 
 # Variables
 
 db = open("palabras_DB.txt", "r")  # Abrir el archivo de palabras (DATABASE)
