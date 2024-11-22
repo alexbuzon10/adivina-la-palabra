@@ -5,6 +5,16 @@
 
 import random
 
+# Colores
+
+class colors:
+  RESET = "\n\x1b[0m"
+  RED = "\n\x1b[31m"
+  GREEN = "\n\x1b[32m"
+   = "\n\x1b[33m"
+  
+  
+ 
 # Variables
 
 db = open("palabras_DB.txt", "r")  # Abrir el archivo de palabras (DATABASE)
@@ -29,20 +39,20 @@ for i in palabras:
   palabras_nuevo.append(i.replace("Ã±", "ñ"))
 
 
-def introducir_palabra(palabra_usuario):
-  palabra_usuario = input("Introduce una palabra de cinco letras: ")
-  if len(palabra_usuario) < 5:
+def introducir_palabra():
+  palabra_usuario_def = input("Introduce una palabra de cinco letras: ")
+  if len(palabra_usuario_def) < 5:
     print("La palabra debe contener 5 letras")
-    introducir_palabra(palabra_usuario)
+    palabra_usuario = introducir_palabra()
   else:
-    if palabra_usuario not in palabras_nuevo:
+    if palabra_usuario_def not in palabras_nuevo:
       print("La palabra introducida no se encuentra en la base de datos")
-      introducir_palabra(palabra_usuario)
+      palabra_usuario = introducir_palabra()
     else:
-      return palabra_usuario
+      return palabra_usuario_def
 
 
-introducir_palabra(palabra_usuario)
+palabra_usuario = introducir_palabra()
 
 # Lista de caracteres tanto como de palabra elegida al azar como de la palabra introducida por el usuario
 
@@ -53,11 +63,14 @@ palabra_usuario_lista = list(palabra_usuario)
 
 # Comprobar si los carácteres de la palabra introducida por el usuario son correctos
 
+print(palabra_usuario_lista)
+
 def comprobar_caracteres(palabra_usuario_lista, palabra_lista):
   for i in palabra_usuario_lista:
     if i in palabra_lista:
       print(f"{i} está en la palabra")
     else:
       print(f"{i} no está en la palabra")
+
 
 comprobar_caracteres(palabra_usuario_lista, palabra_lista)
