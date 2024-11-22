@@ -27,8 +27,6 @@ palabra = palabra.replace("Ã±", "ñ")
 
 # Palabra introducida por el usuario
 
-palabra_usuario = ""
-
 palabras_nuevo = []
 
 for i in palabras:
@@ -37,16 +35,16 @@ for i in palabras:
 
 
 def introducir_palabra():
-  palabra_usuario_def = input("Introduce una palabra de cinco letras: ")
-  if len(palabra_usuario_def) < 5:
-    print("La palabra debe contener 5 letras")
-    palabra_usuario = introducir_palabra()
+  palabra_usuario = input("Introduce una palabra de cinco letras: ")
+  if len(palabra_usuario) < 5:
+    print(f"{colors.RED}La palabra debe contener 5 letras{colors.RESET}")
+    return introducir_palabra()
   else:
-    if palabra_usuario_def not in palabras_nuevo:
-      print("La palabra introducida no se encuentra en la base de datos")
-      palabra_usuario = introducir_palabra()
+    if palabra_usuario not in palabras_nuevo:
+      print(f"{colors.RED}La palabra introducida no se encuentra en la base de datos{colors.RESET}")
+      return introducir_palabra()
     else:
-      return palabra_usuario_def
+      return palabra_usuario
 
 
 palabra_usuario = introducir_palabra()
@@ -59,8 +57,6 @@ palabra_usuario_lista = list(palabra_usuario)
 # Código
 
 # Comprobar si los carácteres de la palabra introducida por el usuario son correctos
-
-print(palabra_usuario_lista)
 
 def comprobar_caracteres(palabra_usuario_lista, palabra_lista):
   for i in palabra_usuario_lista:
