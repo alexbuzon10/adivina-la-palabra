@@ -48,7 +48,7 @@ def introducir_palabra():
 palabra_lista = list(palabra)
 # Comprobar si los carácteres de la palabra introducida por el usuario son correctos
 #! Print de pruebas no hagas trampa pillín ;)
-print(palabra)
+#! <print(palabra)>
 # Función que comprueba los caracteres de la palabra introducida por el usuario y los compara con la palabra elegida al azar
 # Esta función es una fumada de código, pero funciona que es lo importante :D
 def comprobar_caracteres(palabra_usuario_lista, palabra_lista):
