@@ -22,8 +22,7 @@ def juego():
   palabra = palabra.replace("\n", "")
   palabra = palabra.replace("Ã±", "ñ")
   # Palabra introducida por el usuario
-  palabras_nuevo = [
-  ]  # No sé para qué sirve la verdad pero sé que es nesesario :(
+  palabras_nuevo = []  # No sé para qué sirve la verdad pero sé que es nesesario :(
   for i in palabras:
     # Reemplazamos los carácteres especiales
     palabras_nuevo.append(i.replace("\n", ""))
